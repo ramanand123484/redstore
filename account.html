@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> All Products - Redstore</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?
+family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css">
+    </head>
+    <body>
+<div class="container">
+    <div class="navbar">
+    <div class="logo">
+        <a href="index.html"><img src="images/logo.png" width="125px"></a>
+    </div>
+    <nav>
+        <ul id="MenuItems">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="account.html">Account</a></li>
+        </ul>
+    </nav>
+    <img src="images/cart.png" width="30px" height="30px">
+    <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+</div>
+</div>
+
+<!------------------------------------account-page--------------------->
+<div class="account-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <img src="images/image1.png" width="100%">
+            </div>
+            <div class="col-2">
+                <div class="form-container">
+                    <div class="form-btn">
+                        <span onclick="login()" id="Login">Login</span>
+                        <span onclick="register()" id="Register">Register</span>
+                        <hr id="Indicator">
+                    </div>
+                    <form id="LoginForm">
+                        <input type="text" placeholder="Username" required>
+                        <input type="password" placeholder="Password" required>
+                        <button type="submit" class="btn">Login</button>
+                        <a href="">Forgot password</a>
+                    </form id="RegisterForm">
+                    <form action="account.php" method="post" id="RegisterForm">
+                        <input type="text" placeholder="Username" name="username" required>
+                        <input type="email" placeholder="Email" name="email" required>
+                        <input type="tel" placeholder="Mobile Number" name="phone" required>
+                        <input type="password" placeholder="Password" name="password" >
+                        <input type="address" placeholder="Address" name="address" required>
+                        <button type="submit" class="btn">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!----------------footer-------------------->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Download Our App</h3>
+                <p>Download App for Android and ios mobile phone.</p>
+                <div class="app-logo">
+                    <img src="images/play-store.png">
+                    <img src="images/app-store.png">
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <img src="images/logo-white.png">
+                <p>Our Purpose Is To Sustainable Make the Pleasure and Benefits of Sports Accessible to the Many.</p>  
+            </div>
+            <div class="footer-col-3">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li>Coupons</li>
+                    <li>Blog Post</li>
+                    <li>Return Policy</li>
+                    <li>Join Affiliate</li>
+                </ul>
+            </div>
+            <div class="footer-col-4">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>Instagram</li>
+                    <li>YouTube</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="Copyright">Copyright 2025 REDSTORE</p>
+    </div>
+</div>
+<!---------------------------js for toggle menu-------------------------->
+<script>
+    var MenuItems = document.getElementById("MenuItems");
+
+    MenuItems.style.maxHeight = "0px";
+
+    function menutoggle(){
+        if(MenuItems.style.maxHeight == "0px")
+        {
+           MenuItems.style.maxHeight = "200px";
+        }
+        else
+        {
+            MenuItems.style.maxHeight = "0px";
+        }
+    }
+</script>
+<!-------------------------------js for toggle form----------------------->
+<script>
+    var LoginForm = document.getElementById("LoginForm");
+    var RegForm = document.getElementById("RegisterForm");
+    var Indicator = document.getElementById("Indicator");
+    let L = document.getElementById("Login");
+    let R = document.getElementById("Register");
+
+function register(){
+    
+    LoginForm.style.transform = "translateX(0px)";
+    RegForm.style.transform = "translateX(0px)";
+    Indicator.style.transform = "translateX(100px)";
+    RegForm.style.visibility="visible";
+    L.style.borderBottom="none";
+    R.style.borderBottom="3px solid #ff523b";
+
+}
+function login(){
+    LoginForm.style.transform = "translateX(300px)";
+    RegForm.style.transform = "translateX(300px)";
+    Indicator.style.transform = "translateX(100px)";
+    RegForm.style.visibility="hidden";
+    L.style.borderBottom="3px solid #ff523b";
+    R.style.borderBottom="none";
+    
+
+}
+</script>
+    </body>
+    </html>

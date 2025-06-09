@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> All Products - Redstore</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?
+family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+<div class="container">
+    <div class="navbar">
+    <div class="logo">
+        <a href="index.html"><img src="images/logo.png" width="125px"></a>
+    </div>
+    <nav>
+        <ul id="MenuItems">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="account.html">Account</a></li>
+        </ul>
+    </nav>
+    <img src="images/cart.png" width="30px" height="30px">
+    <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+</div>
+</div>
+
+<!---------------------------------cart items details--------------------->
+<div class="small-container cart-page">
+    <table>
+        <tr>
+            <th>Products</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+            <tr>
+                <td>
+                    <div class="cart-info">
+                        <img src="images/buy-1.jpg">
+                        <div>
+                            <p> Red Printed T-Shirt</p>
+                            <small>Price: ₹350.00</small>
+                            <br>
+                            <a href="product-detail.html" class="remove-item">Remove</a>
+                        </div>
+                    </div>
+                </td>
+                <td><input type="number" value="1"></td>
+                <td>₹350.00</td>
+            </tr>
+        </tr>
+        <td>
+            <div class="cart-info">
+                <img src="images/buy-2.jpg">
+                <div>
+                    <p> Sports Black shoes</p>
+                    <small>Price: ₹450.00</small>
+                    <br>
+                    <a href="product-detail.html" class="remove-item">Remove</a>
+                </div>
+            </div>
+        </td>
+        <td><input type="number" value="1"></td>
+        <td>₹450.00</td>
+    </tr>
+</tr>
+<td>
+    <div class="cart-info">
+        <img src="images/buy-3.jpg">
+        <div>
+            <p> Grey Color Track Pants</p>
+            <small>Price: ₹550.00</small>
+            <br>
+            <a href="product-detail.html" class="remove-item">Remove</a>
+        </div>
+    </div>
+</td>
+<td><input type="number" value="1"></td>
+<td>₹550.00</td>
+</tr>
+</tr>
+    </table>
+
+<div class="total-price">
+
+<table>
+    <tr>
+        <td>Subtotal</td>
+        <td>₹1350.00</td>
+    </tr>
+    <tr>
+        <td>Tax</td>
+        <td>₹68.50</td>
+    </tr>
+    <tr>
+        <td>Subtotal</td>
+        <td>₹1418.50</td>
+    </tr>
+</table>
+</div>
+</div>
+
+<!----------------------------------------------------------checkout button-------------------------->
+<div class="checkout">
+    <a href="payment interface.html">
+        <button class="btn">Proceed to Checkout</button>
+    </a>
+</div>
+
+<!----------------footer-------------------->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Download Our App</h3>
+                <p>Download App for Android and ios mobile phone.</p>
+                <div class="app-logo">
+                    <img src="images/play-store.png">
+                    <img src="images/app-store.png">
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <img src="images/logo-white.png">
+                <p>Our Purpose Is To Sustainable Make the Pleasure and Benefits of Sports Accessible to the Many.</p>  
+            </div>
+            <div class="footer-col-3">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li>Coupons</li>
+                    <li>Blog Post</li>
+                    <li>Return Policy</li>
+                    <li>Join Affiliate</li>
+                </ul>
+            </div>
+            <div class="footer-col-4">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>Instagram</li>
+                    <li>YouTube</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="Copyright">Copyright 2025 REDSTORE</p>
+    </div>
+</div>
+<!---------------------------js for toggle menu-------------------------->
+<script>
+    var MenuItems = document.getElementById("MenuItems");
+
+    MenuItems.style.maxHeight = "0px";
+
+    function menutoggle(){
+        if(MenuItems.style.maxHeight == "0px")
+        {
+            MenuItems.style.maxHeight = "200px";
+        }
+        else
+        {
+            MenuItems.style.maxHeight = "0px";
+        }
+    }
+</script>
+
+
+
+<!--------------------js for remove the cart items------------------------->
+<script>
+    // Get all remove-item links
+    var removeButtons = document.querySelectorAll('.remove-item');
+
+    // Add click event listener to each remove button
+    removeButtons.forEach(function(button) {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();  // Prevent default action of the link
+
+            // Get the parent element (the entire cart row)
+            var cartItem = this.closest('tr');
+            
+            // Remove the cart row from the table
+            cartItem.remove();
+            
+            // Optionally, update the total price here as well (after removing an item)
+            updateTotalPrice();
+        });
+    });
+
+    // Function to update the total price (example function)
+    function updateTotalPrice() {
+        var totalPriceElement = document.querySelector('.total-price table');
+        var rows = document.querySelectorAll('.cart-page table tr');
+        
+        var subtotal = 0;
+        rows.forEach(function(row) {
+            var priceCell = row.querySelector('td:last-child'); // Get the last cell (price column)
+            if (priceCell) {
+                var price = parseFloat(priceCell.innerText.replace('₹', '').trim());
+                subtotal += price;
+            }
+        });
+
+        // Update the total price table
+        totalPriceElement.querySelector('tr:nth-child(1) td:last-child').innerText = '₹' + subtotal.toFixed(2);
+    }
+</script>
+    </body>
+    </html>
